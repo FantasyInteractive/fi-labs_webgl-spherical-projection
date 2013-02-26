@@ -3848,7 +3848,7 @@
     Projection.prototype.initialise = function(dimensions) {
       Projection.__super__.initialise.apply(this, arguments);
       this.gui = new dat.GUI;
-      this.buffer = new DEMOS.ImageBuffer('/assets/images/elevation1080.png');
+      this.buffer = new DEMOS.ImageBuffer('https://raw.github.com/FantasyInteractive/fi-labs_webgl-spherical-projection/gh-pages/assets/images/elevation1080.png');
       this.scene = new DEMOS.Scene(this.width, this.height);
       this.scene.add(this.origin = new THREE.Object3D);
       this.$container.append(this.scene.$element);
@@ -3968,7 +3968,7 @@
     Projection.prototype.addParticles = function(width, height, data) {
       var RESOLUTION, latitude, longitude, pixel, position, range, step, vertex, _i, _len;
       RESOLUTION = width / 360;
-      this.map = THREE.ImageUtils.loadTexture('/assets/graphics/particle.png');
+      this.map = THREE.ImageUtils.loadTexture('https://raw.github.com/FantasyInteractive/fi-labs_webgl-spherical-projection/gh-pages/assets/graphics/particle.png');
       this.attributes = SHADERS.Projection.cloneAttributes();
       this.uniforms = SHADERS.Projection.cloneUniforms();
       this.uniforms.uMap.value = this.map;
