@@ -2868,7 +2868,7 @@
 
     Dust.prototype.addDust = function() {
       var index, scale, step, vertex, _i, _ref;
-      this.map = THREE.ImageUtils.loadTexture('/assets/graphics/particle.png');
+      this.map = THREE.ImageUtils.loadTexture('https://raw.github.com/FantasyInteractive/fi-labs_webgl-spherical-projection/gh-pages/assets/graphics/particle.png');
       this.attributes = SHADERS.Dust.cloneAttributes();
       this.uniforms = SHADERS.Dust.cloneUniforms();
       this.uniforms.uMap.value = this.map;
@@ -4438,7 +4438,7 @@
       this.debounce = _.debounce(this.format, DELAY);
       this.heatmap = new DEMOS.HeatmapCanvas(RESOLUTION);
       this.uniforms = SHADERS.Heatmap.cloneUniforms();
-      this.uniforms.uMap.value = THREE.ImageUtils.loadTexture('/assets/graphics/particle.png');
+      this.uniforms.uMap.value = THREE.ImageUtils.loadTexture('https://raw.github.com/FantasyInteractive/fi-labs_webgl-spherical-projection/gh-pages/assets/graphics/particle.png');
       this.scene = new DEMOS.Scene(this.width, this.height);
       this.scene.add(this.origin = new THREE.Object3D);
       this.$container.append(this.scene.$element);
