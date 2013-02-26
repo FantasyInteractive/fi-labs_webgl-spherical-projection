@@ -2868,7 +2868,7 @@
 
     Dust.prototype.addDust = function() {
       var index, scale, step, vertex, _i, _ref;
-      this.map = THREE.ImageUtils.loadTexture('assets/graphics/particle.png');
+      this.map = THREE.ImageUtils.loadTexture('/assets/graphics/particle.png');
       this.attributes = SHADERS.Dust.cloneAttributes();
       this.uniforms = SHADERS.Dust.cloneUniforms();
       this.uniforms.uMap.value = this.map;
@@ -3848,7 +3848,7 @@
     Projection.prototype.initialise = function(dimensions) {
       Projection.__super__.initialise.apply(this, arguments);
       this.gui = new dat.GUI;
-      this.buffer = new DEMOS.ImageBuffer('assets/images/elevation1080.png');
+      this.buffer = new DEMOS.ImageBuffer('/assets/images/elevation1080.png');
       this.scene = new DEMOS.Scene(this.width, this.height);
       this.scene.add(this.origin = new THREE.Object3D);
       this.$container.append(this.scene.$element);
@@ -3866,7 +3866,7 @@
       this.displacement = 0.001;
       this.radius = 150;
       this.offset = 40;
-      this.showSource = true;
+      this.showSource = false;
       this.autoRotation = true;
       this.scatter = false;
       this.cylinder = false;
@@ -3968,7 +3968,7 @@
     Projection.prototype.addParticles = function(width, height, data) {
       var RESOLUTION, latitude, longitude, pixel, position, range, step, vertex, _i, _len;
       RESOLUTION = width / 360;
-      this.map = THREE.ImageUtils.loadTexture('assets/graphics/particle.png');
+      this.map = THREE.ImageUtils.loadTexture('/assets/graphics/particle.png');
       this.attributes = SHADERS.Projection.cloneAttributes();
       this.uniforms = SHADERS.Projection.cloneUniforms();
       this.uniforms.uMap.value = this.map;
@@ -4169,7 +4169,7 @@
       this.maskRendered = false;
       this.width = 360 * this.resolution;
       this.height = 180 * this.resolution;
-      this.buffer = new DEMOS.ImageBuffer("assets/images/land" + this.width + ".png");
+      this.buffer = new DEMOS.ImageBuffer("/assets/images/land" + this.width + ".png");
       this.rendered = new signals.Signal;
       this.$window = $(window);
       this.$output = $('<canvas class="output">').attr({
@@ -4438,7 +4438,7 @@
       this.debounce = _.debounce(this.format, DELAY);
       this.heatmap = new DEMOS.HeatmapCanvas(RESOLUTION);
       this.uniforms = SHADERS.Heatmap.cloneUniforms();
-      this.uniforms.uMap.value = THREE.ImageUtils.loadTexture('assets/graphics/particle.png');
+      this.uniforms.uMap.value = THREE.ImageUtils.loadTexture('/assets/graphics/particle.png');
       this.scene = new DEMOS.Scene(this.width, this.height);
       this.scene.add(this.origin = new THREE.Object3D);
       this.$container.append(this.scene.$element);
@@ -4531,7 +4531,7 @@
       THREE.GeometryUtils.triangulateQuads(geometry);
       frame = new THREE.Mesh(geometry, material);
       material = new THREE.MeshBasicMaterial({
-        map: THREE.ImageUtils.loadTexture('assets/images/land1080.png'),
+        map: THREE.ImageUtils.loadTexture('/assets/images/land1080.png'),
         blending: THREE.AdditiveBlending,
         side: THREE.DoubleSide,
         transparent: true,
