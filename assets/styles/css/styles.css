@@ -1,0 +1,127 @@
+@import url("http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Open+Sans:400italic,600italic,700italic,800italic,400,600,700,800");
+body {
+  background:black;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans";
+  margin: 0; }
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+#container {
+  background-image: -webkit-radial-gradient(50% 50%, circle, #000505 0%, #051520 90%);
+  background-image: -moz-radial-gradient(50% 50%, circle, #000505 0%, #051520 90%);
+  background-image: -ms-radial-gradient(50% 50%, circle, #000505 0%, #051520 90%);
+  background-image: -o-radial-gradient(50% 50%, circle, #000505 0%, #051520 90%);
+  background-image: radial-gradient(50% 50%, circle, #000505 0%, #051520 90%);
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%; }
+  #container .vignetting {
+    background-image: -webkit-radial-gradient(50% 40%, ellipse, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 100%);
+    background-image: -moz-radial-gradient(50% 40%, ellipse, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 100%);
+    background-image: -ms-radial-gradient(50% 40%, ellipse, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 100%);
+    background-image: -o-radial-gradient(50% 40%, ellipse, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 100%);
+    background-image: radial-gradient(50% 40%, ellipse, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%; }
+  #container .scanlines {
+    background: transparent url("../../graphics/scanline.png");
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    opacity: 0.2;
+    height: 100%;
+    width: 100%; }
+  #container .lensflare {
+    background-image: -webkit-radial-gradient(80% 20%, ellipse, rgba(221, 34, 34, 0.15) 0%, rgba(221, 34, 34, 0) 60%);
+    background-image: -moz-radial-gradient(80% 20%, ellipse, rgba(221, 34, 34, 0.15) 0%, rgba(221, 34, 34, 0) 60%);
+    background-image: -ms-radial-gradient(80% 20%, ellipse, rgba(221, 34, 34, 0.15) 0%, rgba(221, 34, 34, 0) 60%);
+    background-image: -o-radial-gradient(80% 20%, ellipse, rgba(221, 34, 34, 0.15) 0%, rgba(221, 34, 34, 0) 60%);
+    background-image: radial-gradient(80% 20%, ellipse, rgba(221, 34, 34, 0.15) 0%, rgba(221, 34, 34, 0) 60%);
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%; }
+
+.scene {
+  cursor: -webkit-grab; }
+  .scene.grabbing {
+    cursor: -webkit-grabbing; }
+
+.buffer {
+  -webkit-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(5, 5, 5, 0.8);
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%; }
+  .buffer.hide {
+    -webkit-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    -ms-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transform: translate(-50%, 150%);
+    -moz-transform: translate(-50%, 150%);
+    -ms-transform: translate(-50%, 150%);
+    -o-transform: translate(-50%, 150%);
+    transform: translate(-50%, 150%); }
+
+.heatmap {
+  -webkit-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(5, 5, 5, 0.8);
+  position: absolute;
+  cursor: pointer;
+  height: 540px;
+  width: 1080px;
+  left: 50%;
+  top: 50%; }
+  .heatmap:before {
+    background: url("../../images/land1080.png");
+    position: absolute;
+    display: block;
+    opacity: 0.1;
+    height: 100%;
+    width: 100%;
+    content: "";
+    left: 0;
+    top: 0; }
+  .heatmap.hide {
+    -webkit-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    -ms-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transform: translate(-50%, 150%);
+    -moz-transform: translate(-50%, 150%);
+    -ms-transform: translate(-50%, 150%);
+    -o-transform: translate(-50%, 150%);
+    transform: translate(-50%, 150%); }
+  .heatmap .output {
+    position: absolute; }
