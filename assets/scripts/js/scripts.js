@@ -3866,7 +3866,7 @@
       this.displacement = 0.001;
       this.radius = 150;
       this.offset = 40;
-      this.showSource = false;
+      this.showSource = true;
       this.autoRotation = true;
       this.scatter = false;
       this.cylinder = false;
