@@ -167,8 +167,6 @@ class DEMOS.Projection extends DEMOS.Demo
 
     controller = @gui.add @, 'alpha2', 0, 1
     controller.onChange (value) => @updateUniforms()
-
-    @gui.close()
     return
 
   addDust: () =>
