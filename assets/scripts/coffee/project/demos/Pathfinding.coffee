@@ -3,6 +3,7 @@
 #
 # Prototype: Pathfinding
 #
+# @author Zaidin Amiot
 # @author Matthew Wagerfield
 #
 #============================================================
