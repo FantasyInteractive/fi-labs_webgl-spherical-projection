@@ -3328,6 +3328,7 @@
   #
   # Prototype: Pathfinding
   #
+  # @author Zaidin Amiot
   # @author Matthew Wagerfield
   #
   #============================================================
@@ -3956,7 +3957,6 @@
       controller.onChange(function(value) {
         return _this.updateUniforms();
       });
-      this.gui.close();
     };
 
     Projection.prototype.addDust = function() {
